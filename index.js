@@ -1,6 +1,13 @@
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
+
+// Autorise ton site frontend en ligne à communiquer avec le serveur
+app.use(cors({
+  origin: 'https://onrender.com',
+  credentials: true
+}));
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Server } = require('socket.io');
